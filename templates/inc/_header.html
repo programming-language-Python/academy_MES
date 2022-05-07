@@ -1,0 +1,19 @@
+{% load static %}
+<header class="header">
+    <a href="{% url 'index' %}" class="header__logo">
+        <img src="{% static 'svg/logo.svg' %}" alt="logo">
+    </a>
+    <img class="header__svg" src="{% static 'svg/header/to_come_in.svg' %}" alt="to_come_in">
+    <div class="header__to-come-in">
+        <a href="{% url 'login' %}" class="header__link">Войти</a>
+    </div>
+</header>
+<nav class="header__menu">
+    <ul class="header__list">
+        <li><a href="" class="header__link">Содержание</a></li>
+        <li><a href="{% url 'about_the_course' %}" class="header__link">О Курсе</a></li>
+        <li><a href="{% url 'training' %}" class="header__link">Обучение</a></li>
+        <li><a href="{% url 'author' %}" class="header__link">Авторы</a></li>
+        <li><a href="" class="header__link">Поиск</a></li>
+    </ul>
+</nav>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block sidebar %}
+    <!-- Сайдбар (grid-элемент) -->
+    <aside class="sidebar">
+        <nav class="sidebar__menu">
+            <ul class="sidebar__list">
+                <li><a href="" class="sidebar__link">Лекции</a></li>
+                <li><a href="" class="sidebar__link">Практические занятия</a></li>
+                <li><a href="" class="sidebar__link">Видеоматериалы</a></li>
+                <li><a href="" class="sidebar__link">Тестирование</a></li>
+            </ul>
+        </nav>
+    </aside>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/uikit.min.js' %}"></script>
+{% endblock %}
