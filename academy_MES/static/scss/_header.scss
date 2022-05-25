@@ -26,24 +26,21 @@
 
   &__menu {
     background-color: #09A2F8;
-    //grid-column: 3 / 4;
   }
 
   &__list {
-    display: grid;
-    grid-auto-flow: column;
-    justify-items: center;
+    margin: 20px 0 20px 0;
   }
 
   &__list li {
-    margin: 0px 0px 0px 20px;
+    //margin: 0 0 0 20px;
   }
 
   &__link {
     color: #fff;
     text-transform: uppercase;
     font-size: 14px;
-    text-decoration: none;
+    text-decoration-line: underline;
   }
 
   //@media (max-width: 767px) {

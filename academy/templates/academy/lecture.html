@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Лекции{% endblock %}
+{% block sidebar %}
+    <!-- Сайдбар (grid-элемент) -->
+    {% include 'inc/_sidebar.html' %}
+{% endblock %}
+{% block content %}
+    <section class="lecture" id="lecture">
+        <h1 class="title">Лекции</h1>
+        <div class="uk-grid-small uk-child-width-1-1@s uk-child-width-1-2@m uk-flex-center uk-text-center" uk-grid>
+            {% for lecture in lectures %}
+                <div>
+                    <div class="uk-card uk-card-default">
+                        <embed src="{% static lecture %}"/>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
+{% block script %}
+    <script src="{% static 'js/uikit.min.js' %}"></script>
+    <script src="{% static 'js/sidebar.js' %}"></script>
+{% endblock %}

@@ -1,10 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Авторизация{% endblock %}
+{% block content %}
+    <section class="section-form uk-flex uk-flex-column uk-align-center">
+        <h1 class="title uk-align-center">Авторизация</h1>
+        <form class="section-form__form uk-text-center" action="{% url 'login' %}"
+              method="post">
+            {% csrf_token %}
+            <div>
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                    {{ form.username }}
+                </div>
+                {% if form.username.errors %}
+                    {{ form.username.errors }}
+                {% endif %}
+            </div>
 
-</body>
-</html>
+            <div>
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                    {{ form.password }}
+                </div>
+                {% if form.password.errors %}
+                    {{ form.password.errors }}
+                {% endif %}
+            </div>
+
+            <button type="submit" class="uk-button uk-button-default uk-margin-small-top uk-margin-bottom">
+                Авторизоваться
+            </button>
+            <a class="uk-link-muted section-form__link-auth" href="{% url 'register' %}">У вас нет аккаунт?
+                Зарегистрируйтесь!</a>
+        </form>
+    </section>
+{% endblock %}
+
+{# Сюда вставляются скрипты у каждой страницы свой срикпт #}
+{% block script %}
+    <script src="{% static 'js/uikit.min.js' %}"></script>
+    <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+{% endblock %}

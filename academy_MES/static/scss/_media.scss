@@ -1,0 +1,19 @@
+//.main {
+//  //display: block;
+//}
+//
+@media (max-width: 960px) {
+  .sidebar {
+    //width: 100%;
+    //height: 70px;
+
+    &__list {
+      //position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      //flex-wrap: wrap;
+    }
+  }
+}

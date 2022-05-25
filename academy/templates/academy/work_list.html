@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{ user.username }} {% endblock %}
+{% block content %}
+    <section class="works uk-flex uk-flex-column uk-align-center uk-margin-left uk-margin-right">
+        <h1 class="title uk-align-center">Отправленные работы</h1>
+        <a href="{% url 'add_work' %}">Добавить новую</a>
+        <table class="uk-table uk-table-divider">
+            <thead>
+            <tr>
+                <th>ФИО</th>
+                <th>Выполненные работа</th>
+                <th>Оценка</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for work in works %}
+                <tr>
+                    <td>{{ work.full_name }}</td>
+                    <td>{{ work.completed_works }}</td>
+                    <td>{{ work.assessment }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}
+
+{# Сюда вставляются скрипты у каждой страницы свой срикпт #}
+{% block script %}
+    <script src="{% static 'js/uikit.min.js' %}"></script>
+    <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+{% endblock %}

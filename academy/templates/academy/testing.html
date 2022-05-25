@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Тестирование {% endblock %}
+{% block sidebar %}
+    <!-- Сайдбар (grid-элемент) -->
+    {% include 'inc/_sidebar.html' %}
+{% endblock %}
+{% block content %}
+    <section class="testing" id="testing">
+        <h1 class="title">Тестирование</h1>
+        <div class="uk-grid-small uk-child-width-1-1@s uk-child-width-1-2@m uk-flex-center uk-text-center" uk-grid>
+            {% for test in tests %}
+                <div>
+                    <div class="uk-card uk-card-default">
+                        <embed src="{% static test %}"/>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
+{% block script %}
+    <script src="{% static 'js/uikit.min.js' %}"></script>
+    <script src="{% static 'js/sidebar.js' %}"></script>
+{% endblock %}

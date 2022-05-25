@@ -1,8 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block title %}О курсе{% endblock %}
 {% block content %}
-    О курсе
+    <section class="course uk-flex uk-flex-column uk-align-center uk-text-center">
+        <h1 class="title">О курсе</h1>
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+            <div class="uk-card-media-left uk-cover-container uk-height-large">
+                <img src="{% static 'images/about_the_course/about_the_course.jpg' %}" alt="" uk-cover>
+                <canvas width="400" height="400"></canvas>
+            </div>
+            <div>
+                <div class="uk-card-body uk-text-lead uk-text-large">
+                    <p>Данный курс "Электроэнергетика и электротехника" направлен на расширение знаний обучающихся,
+                        повышение уровня подготовки через дистанционное объяснение тем, решение задач и закрепление
+                        полученных знаний в режиме онлайн. </p>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
 
 {% block script %}

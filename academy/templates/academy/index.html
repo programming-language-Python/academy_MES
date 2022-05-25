@@ -3,18 +3,30 @@
 
 {% block sidebar %}
     <!-- Сайдбар (grid-элемент) -->
-    <aside class="sidebar">
-        <nav class="sidebar__menu">
-            <ul class="sidebar__list">
-                <li><a href="" class="sidebar__link">Лекции</a></li>
-                <li><a href="" class="sidebar__link">Практические занятия</a></li>
-                <li><a href="" class="sidebar__link">Видеоматериалы</a></li>
-                <li><a href="" class="sidebar__link">Тестирование</a></li>
-            </ul>
-        </nav>
-    </aside>
+    {% include 'inc/_sidebar.html' %}
 {% endblock %}
 
+{% block content %}
+    <div class="index uk-flex uk-flex-column uk-flex-around uk-margin-left uk-margin-right">
+        <div>
+            <div class="uk-card uk-card-hover uk-card-body">
+                <p>Цифровой Образовательный курс по дисциплине "Электроэнергетика и Электротехника"</p>
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-hover uk-card-body">
+                <p>С помощью специально разработанного курса "Электроэнергетика и Электротехника" вы сможете повысить
+                    свой уровень знания</p>
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-hover uk-card-body">
+                <p>Используя материалы курса можно самостоятельно изучить те или иные вопросы дисциплины </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
 {% block script %}
     <script src="{% static 'js/uikit.min.js' %}"></script>
+    <script src="{% static 'js/sidebar.js' %}"></script>
 {% endblock %}

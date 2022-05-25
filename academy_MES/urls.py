@@ -15,8 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', include('academy.urls')),
     path('admin/', admin.site.urls),
+    path('', include('academy.urls')),
 ]
+
+# Подключаем спомогающий инструмент, если разрабатываем сайт
+if settings.DEBUG:
+    import debug_toolbar
+
+    urlpatterns = [
+                      path('__debug__/', include(debug_toolbar.urls)),
+                  ] + urlpatterns
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+else:
+    # если сайт задеплоин, то выполняется этот код для отображения картинок
+    from django.urls import re_path
+    from django.views.static import serve
+
+    urlpatterns += [re_path(r'media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}), ]

@@ -6,22 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>{% block title %}Академия гражданской защиты МЧС России{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}">
     <link rel="icon" type="image/png" href="{% static 'svg/logo.svg' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<div class="wrapper">
+<div class="wrapper uk-flex" id="wrapper">
     {# include вставляет содержимое файла #}
     {# Шапка #}
     {% include 'inc/_header.html' %}
 
     {# Основной контент #}
-    <main class="main">
+    <main class="main" id="main">
+
         {# Сайдбар #}
         {% block sidebar %}{% endblock %}
 
-        {% block content %}КОНТЕНТ{% endblock %}
+        {# Основной контент #}
+
+        <div class="content
+        {% if is_sidebar %}
+            content-and-sidebar
+        {% endif %}
+        uk-flex uk-flex-column uk-align-center uk-text-center" id="content">
+            {% block content %}КОНТЕНТ{% endblock %}
+        </div>
+
     </main>
 
     {# Подвал #}
@@ -30,6 +39,6 @@
 </div>
 
 {# Сюда вставляются скрипты у каждой страницы свой срикпт #}
-{% block script %}SCRIPT{% endblock %}
+{% block script %}{% endblock %}
 </body>
 </html>

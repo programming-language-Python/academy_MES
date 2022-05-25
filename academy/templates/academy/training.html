@@ -1,8 +1,43 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block title %}Обучение{% endblock %}
 {% block content %}
-    Обучение
+    <section class="training uk-margin-left uk-margin-right">
+        <h1 class="title">Обучение</h1>
+        <div class="uk-child-width-1-2@m uk-text-justify" uk-grid>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-media-top">
+                        <img src="{% static 'images/training/image1.jpg' %}" alt="">
+                    </div>
+                    <div class="uk-card-body uk-text-lead">
+                        <p>Программа курса "Электроэнергетика и Электротехника" предназначена для студентов младших
+                            курсов технических специальностей ВУЗов.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-body uk-text-lead">
+                        <p>
+                            В результате изучения курса обучающиеся должны:
+                        </p>
+                        <ul class="uk-list uk-list-divider">
+                            <li>- освоить основные принципы и методы расчёта электрических цепей;</li>
+                            <li>- освоить основные принципы и методы расчёта магнитных цепей;
+                            <li>- изучить способы и методы деятельности, созданных для применения электрической энергии;
+                            </li>
+                            <li>- знать преобразование различных видов энергии в электрическую;</li>
+                            <li>- знать основы направления развития Электроэнергетики и Электротехники.</li>
+                        </ul>
+                    </div>
+                    <div class="uk-card-media-bottom">
+                        <img src="{% static 'images/training/image2.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
 
 {% block script %}

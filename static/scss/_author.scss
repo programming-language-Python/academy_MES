@@ -1,0 +1,14 @@
+.author {
+  &__content {
+
+    & span {
+      display: block;
+    }
+  }
+}
+
+.image-2 > div {
+  transform: translate(-50%, 0px);
+  position: relative;
+  left: 50%;
+}

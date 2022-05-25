@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{ user.username }} {% endblock %}
+{% block content %}
+    <section class="section-form uk-flex uk-flex-column uk-align-center">
+        <h1 class="title uk-align-center">Отправить работу</h1>
+        <a class="uk-margin-bottom" href="{% url 'view_work' %}">Список отправленных заданий</a>
+        <form class="section-form__form uk-text-center" action="{% url 'add_work' %}"
+              method="post">
+            {% csrf_token %}
+            <fieldset class="uk-fieldset">
+                <div>
+                    <div class="uk-inline">
+                        <span class="uk-form-icon" uk-icon="icon: user"></span>
+                        {{ form.full_name }}
+                    </div>
+                    {% if form.full_name.errors %}
+                        {{ form.full_name.errors }}
+                    {% endif %}
+                </div>
+
+                <div>
+                    <div class="uk-inline">
+                        {{ form.completed_works }}
+                    </div>
+                    {% if form.completed_works.errors %}
+                        {{ form.completed_works.errors }}
+                    {% endif %}
+                </div>
+            </fieldset>
+
+            <button type="submit" class="uk-button uk-button-default uk-margin-small-top uk-margin-bottom">
+                Отправить
+            </button>
+        </form>
+
+    </section>
+{% endblock %}
+
+{# Сюда вставляются скрипты у каждой страницы свой срикпт #}
+{% block script %}
+    <script src="{% static 'js/uikit.min.js' %}"></script>
+    <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+{% endblock %}
