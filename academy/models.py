@@ -24,7 +24,7 @@ class Work(models.Model):
         sunday = 'Вс', _('Воскресенье')
 
     days_of_the_week = models.CharField(
-        max_length=2, choices=DaysOfTheWeek.choices, default=DaysOfTheWeek.monday, )
+        max_length=2, choices=DaysOfTheWeek.choices, default=DaysOfTheWeek.monday, verbose_name='Дни недели')
 
     # Выполненные работы
     completed_works = models.TextField(verbose_name='Выполненные работы')
@@ -37,7 +37,7 @@ class Work(models.Model):
         nope = '1', _('Нет')
 
     assessment = models.CharField(
-        max_length=1, choices=Assessment.choices, default=Assessment.nope, )
+        max_length=1, choices=Assessment.choices, default=Assessment.nope, verbose_name='Оценка')
 
     # Внешний ключ. Связь один ко многим. Один пользователь может иметь несколько задач.
     # models.CASCADE:

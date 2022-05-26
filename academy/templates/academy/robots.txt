@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: *
+Disallow: /admin/
+Host: academy-mes.herokuapp.com

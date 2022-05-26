@@ -17,4 +17,9 @@ urlpatterns = [
     path('workshops/', workshops, name='workshops'),
     path('video_footage/', video_footage, name='video_footage'),
     path('testing/', testing, name='testing'),
+
+    path(
+        "robots.txt",
+        TemplateView.as_view(template_name="academy/robots.txt", content_type="text/plain"),
+    ),
 ]

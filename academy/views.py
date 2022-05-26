@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 from .forms import UserRegisterForm, UserLoginForm, WorkForm
 from django.contrib.auth import login, logout
 from django.contrib import messages
