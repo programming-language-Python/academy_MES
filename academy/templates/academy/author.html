@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}Авторы{% endblock %}
+
 {% block content %}
     <section class="author uk-flex uk-flex-column uk-align-center uk-text-center">
         <h1 class="title">Авторы</h1>
-        <div class="author__content uk-child-width-1-1@s uk-child-width-1-2@m uk-grid-match uk-grid-large" uk-grid>
+        <div class="author__content uk-grid-match uk-grid-large" uk-grid>
             <div>
                 <div class="uk-card uk-card-default">
                     <div class="uk-card-media-top">
@@ -16,18 +18,6 @@
                     </div>
                 </div>
             </div>
-            <div class="image-2">
-                <div class="uk-card uk-card-default uk-width-medium@m uk-width-xlarge@s">
-                    <div class="uk-card-media-top">
-                        <img src="{% static 'images/author/Дюнова Диана Николаевна.jpg' %}"
-                             alt="Дюнова Диана Николаевна.jpg">
-                    </div>
-                    <div class="uk-card-body">
-                        <h3 class="uk-card-title"><span>Дюнова</span> Диана Николаевна</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 {% endblock %}
 
