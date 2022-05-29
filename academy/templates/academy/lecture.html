@@ -12,7 +12,12 @@
             {% for lecture in lectures %}
                 <div>
                     <div class="uk-card uk-card-default">
-                        <embed src="{% static lecture %}"/>
+                        <object data="{% static lecture %}" type="application/pdf">
+                            <p>Your web browser doesn't have a PDF plugin.
+                                Instead you can <a href="{% static lecture %}">click here to
+                                    download the PDF file.</a></p>
+                        </object>
+{#                        <embed src="{% static lecture %}"/>#}
                     </div>
                 </div>
             {% endfor %}
