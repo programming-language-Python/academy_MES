@@ -32,6 +32,10 @@ def author(request):
     return render(request, 'academy/author.html')
 
 
+def search(request):
+    return render(request, 'academy/search.html')
+
+
 def lecture(request):
     s = StaticFilesStorage()
     lectures = list(get_files(s, location='documents/lecture'))
