@@ -10,7 +10,10 @@ from django.contrib.staticfiles.storage import StaticFilesStorage
 
 # Create your views here.
 def index(request):
-    return render(request, 'academy/index.html')
+    is_sidebar = True
+    return render(request, 'academy/index.html', {
+        'is_sidebar': is_sidebar
+    })
 
 
 def content(request):

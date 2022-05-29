@@ -22,4 +22,8 @@ urlpatterns = [
         "robots.txt",
         TemplateView.as_view(template_name="academy/robots.txt", content_type="text/plain"),
     ),
+    path(
+        "sitemap.xml",
+        TemplateView.as_view(template_name="academy/sitemap.xml", content_type="application/xml"),
+    ),
 ]
