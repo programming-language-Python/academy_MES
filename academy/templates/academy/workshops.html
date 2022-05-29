@@ -12,7 +12,10 @@
             {% for workshop in workshops %}
                 <div>
                     <div class="uk-card uk-card-default">
-                        <embed src="{% static workshop %}"/>
+                         <object data="{% static workshop %}" type="application/pdf">
+                            <p>В вашем веб-браузере нет подключаемого модуля PDF. Вместо этого вы можете <a
+                                    href="{% static workshop %}">нажать сюда, чтобы загрузить PDF-файл ({{ workshop }}).</a></p>
+                        </object>
                     </div>
                 </div>
             {% endfor %}

@@ -13,11 +13,9 @@
                 <div>
                     <div class="uk-card uk-card-default">
                         <object data="{% static lecture %}" type="application/pdf">
-                            <p>Your web browser doesn't have a PDF plugin.
-                                Instead you can <a href="{% static lecture %}">click here to
-                                    download the PDF file.</a></p>
+                            <p>В вашем веб-браузере нет подключаемого модуля PDF. Вместо этого вы можете <a
+                                    href="{% static lecture %}">нажать сюда, чтобы загрузить PDF-файл ({{ lecture }}).</a></p>
                         </object>
-{#                        <embed src="{% static lecture %}"/>#}
                     </div>
                 </div>
             {% endfor %}

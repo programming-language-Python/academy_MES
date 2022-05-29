@@ -12,7 +12,11 @@
             {% for test in tests %}
                 <div>
                     <div class="uk-card uk-card-default">
-                        <embed src="{% static test %}"/>
+                        <object data="{% static test %}" type="application/pdf">
+                            <p>В вашем веб-браузере нет подключаемого модуля PDF. Вместо этого вы можете <a
+                                    href="{% static test %}">нажать сюда, чтобы загрузить PDF-файл
+                                ({{ test }}).</a></p>
+                        </object>
                     </div>
                 </div>
             {% endfor %}
