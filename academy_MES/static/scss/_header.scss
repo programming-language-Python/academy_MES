@@ -6,11 +6,12 @@
   grid-template: 1fr / 1fr minmax(auto, 1300px) minmax(auto, 50px) minmax(auto, 50px) 1fr;
 
   &__logo {
-    color: #fff;
+    width: 200px;
+    height: 70px;
     grid-column: 2 / 3;
 
-    &:hover {
-      color: #9AD9FC;
+    & img {
+      width: 100%;
     }
   }
 

@@ -26,11 +26,10 @@
 
   &__menu {
     background-color: #09A2F8;
-
   }
 
   &__list {
-
+    margin: 20px 0 20px 0;
   }
 
   &__list li {
@@ -40,8 +39,8 @@
   &__link {
     color: #fff;
     text-transform: uppercase;
-    font-size: 20px;
-    text-decoration: none;
+    font-size: 14px;
+    text-decoration-line: underline;
   }
 
   //@media (max-width: 767px) {
