@@ -8,6 +8,7 @@ class WorkAdmin(admin.ModelAdmin):
     list_display = ('id', 'full_name', 'days_of_the_week', 'completed_works', 'assessment', 'user')
     # какие столбцы будут работать как ссылка для перехода изменения строки
     list_display_links = ('id', 'full_name')
+    list_editable = ('assessment',)
     # по каким столбцам можно осуществлять поиск
     search_fields = ('id', 'full_name', 'days_of_the_week', 'completed_works', 'assessment', 'user')
     # столбцы по которым можно сортировать
