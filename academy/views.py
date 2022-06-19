@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, TemplateView
 from .forms import UserRegisterForm, UserLoginForm, WorkForm
 from django.contrib.auth import login, logout
 from django.contrib import messages
@@ -130,13 +129,9 @@ def user_logout(request):
     return redirect('login')
 
 
-# def view_work(request, username):
-#     news_item = User.objects.get(username=username)
-#     # news_item = get_object_or_404(User, username=username)
-#     return render(request, 'academy/view_work.html', {"news_item": news_item})
-class ViewWork(ListView):
-    model = Work
-    context_object_name = 'works'
+def view_work(request):
+    works = Work.objects.filter(user=request.user)
+    return render(request, 'academy/work_list.html', {"works": works})
 
 
 def add_work(request):
@@ -155,10 +150,3 @@ def add_work(request):
     else:
         form = WorkForm()
     return render(request, 'academy/add_work.html', {'form': form})
-
-# class ViewWork(LoginRequiredMixin, CreateView):
-#     form_class = workForm
-#     template_name = 'academy/work.html'
-#     # success_url = reverse_lazy('home')
-#     # login_url = '/admin/'
-#     raise_exception = True
